@@ -19,6 +19,10 @@ jobs:
         echo "pwd: "`pwd`
         echo "============================="
         echo "scriptPath1: "$(cd `dirname $0`; pwd)
+
+        path1=  `$(pwd)`
+        cd path1
+        ls -a
         echo "scriptPath2: "$(pwd)
         echo "scriptPath3: "$(dirname $(readlink -f $0))
         echo "scriptPath4: "$(cd $(dirname ${BASH_SOURCE:-$0});pwd)
