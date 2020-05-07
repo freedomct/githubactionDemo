@@ -3,20 +3,17 @@ name: Github Action Demo
 on: 
   schedule:
         - cron:  '*/5 * * * *'         
-
 jobs:
-  add new files:
-      runs-on: 
-         - ubuntu-latest
-
-  steps:
-    first-job:
-       - name: add all changed files
-          run: | 
-             git add --all
-             git commit -m "update files"
-             git pull origin master
-             git push origin master
+  yang:
+    runs-on: 
+    - ubuntu-latest
+    steps:
+    - name: update change
+      run: |
+        git add --all
+        git commit -m "update files"
+        git pull origin master
+        git push origin master
 
 
       
