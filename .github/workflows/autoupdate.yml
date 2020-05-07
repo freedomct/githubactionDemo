@@ -4,13 +4,18 @@ on: [push]
   # schedule:
   #       - cron:  '*/5 * * * *'         
 jobs:
-  yang:
-    runs-on: ubuntu-latest
+   demoAction:
+         name: demo
+         runs-on: ubuntu-latest
+         steps:
+           - continue-on-error: false
+           - name: Helloworld
+             run: echo Hello world $FIRST_NAME $middle_name $Last_Name!
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
-         run: echo yang
+
+
+
+
     #  git status
 
     # cd `pwd`
