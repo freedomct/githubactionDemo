@@ -11,7 +11,7 @@ jobs:
     - name: update change
       run: |
         # echo '$0: '$0
-        # echo "pwd: "`pwd`
+        echo "pwd: "`pwd`
         # echo "============================="
         # echo "scriptPath1: "$(cd `dirname $0`; pwd)
         # echo "scriptPath2: "$(pwd)
