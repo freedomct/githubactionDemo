@@ -12,25 +12,22 @@ jobs:
 
     first-job:
        - name: add all changed files
-          run:
-         git add --all
+          run: git add --all
 
     second-job:
          needs: first-job
         - name: commit message
-           run: 
-             git commit -m "update files"
+           run: git commit -m "update files"
 
     third-job:
        needs: [first-job,second-job]
        - name: pull service 
-         run:  
-           git pull origin master
+         run: git pull origin master
+         
     fouth-job:
        needs: [first-job,second-job,third-job]
        - name: push
-          run: 
-            git push origin master
+          run: git push origin master
 
 
       
