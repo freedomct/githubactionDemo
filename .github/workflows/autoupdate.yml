@@ -15,9 +15,9 @@ jobs:
         path1=`cd ..; pwd`   #上一条命令表示我们已经在脚本所在位置的绝对路径下，cd ..表示返回上一层
         path2=`cd stz4; pwd`
 
-        # echo "path: "`path`
-        # echo "path1: "`path1`
-        # echo "path2: "`path2`
+        echo "path: "`path`
+        echo "path1: "`path1`
+        echo "path2: "`path2`
 
 
         # echo '$0: '$0
