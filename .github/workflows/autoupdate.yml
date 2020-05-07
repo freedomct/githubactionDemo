@@ -10,8 +10,13 @@ jobs:
     steps:
     - name: update change
       run: |
+        path=`dirname $0`
+        path=`cd "$path"; pwd` #path是脚本所在位置的绝对路径，进入到该路径下
+        path1=`cd ..; pwd`   #上一条命令表示我们已经在脚本所在位置的绝对路径下，cd ..表示返回上一层
+        path2=`cd stz4; pwd`
+
         # echo '$0: '$0
-        echo "pwd: "`pwd`
+        # echo "pwd: "`pwd`
         # echo "============================="
         # echo "scriptPath1: "$(cd `dirname $0`; pwd)
         # echo "scriptPath2: "$(pwd)
@@ -19,11 +24,11 @@ jobs:
         # echo "scriptPath4: "$(cd $(dirname ${BASH_SOURCE:-$0});pwd)
         # echo -n "scriptPath5: " && dirname $(readlink -f ${BASH_SOURCE[0]})
 
-        cd `pwd`
-        git add --all
-        git commit -m "update files"
-        git pull origin master
-        git push origin master
+        # cd `pwd`
+        # git add --all
+        # git commit -m "update files"
+        # git pull origin master
+        # git push origin master
 
 
       
