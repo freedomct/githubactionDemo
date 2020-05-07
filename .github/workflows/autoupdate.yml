@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
          run: | 
-         git add --all
+           git status
 
     # cd `pwd`
     # git commit -m "update files"
