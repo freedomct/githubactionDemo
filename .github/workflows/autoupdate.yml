@@ -7,6 +7,7 @@ jobs:
   yang:
     runs-on: 
     - ubuntu-latest
+
     steps:
     - name: update change
       run: |
@@ -20,13 +21,20 @@ jobs:
         echo "============================="
         echo "scriptPath1: "$(cd `dirname $0`; pwd)
 
-        path1=  `$(pwd)`
+        path1 = `$(pwd)`
         cd path1
-        ls -a
         echo "scriptPath2: "$(pwd)
+        path2 = `$(pwd)`
+        cd path2
         echo "scriptPath3: "$(dirname $(readlink -f $0))
+        path3 = `$(dirname $(readlink -f $0))`
+        cd path3
         echo "scriptPath4: "$(cd $(dirname ${BASH_SOURCE:-$0});pwd)
+        path4 = `$(cd $(dirname ${BASH_SOURCE:-$0});pwd)`
+        cd path4
         echo -n "scriptPath5: " && dirname $(readlink -f ${BASH_SOURCE[0]})
+        path5 = `&& dirname $(readlink -f ${BASH_SOURCE[0]})`
+        cd path5
 
         # cd `pwd`
         # git add --all
