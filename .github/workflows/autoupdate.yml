@@ -1,0 +1,37 @@
+name: Github Action Demo
+
+on: 
+  schedule:
+        - cron:  '*/5 * * * *'         
+
+jobs:
+  add new files:
+      - runs-on: ubuntu-latest
+
+  steps:
+
+    first-job:
+       - name: add all changed files
+          run:
+         git add --all
+
+    second-job:
+         needs: first-job
+        - name: commit message
+           run: 
+             git commit -m "update files"
+
+    third-job:
+       needs: [first-job,second-job]
+       - name: pull service 
+         run:  
+           git pull origin master
+    fouth-job:
+       needs: [first-job,second-job,third-job]
+       - name: push
+          run: 
+            git push origin master
+
+
+      
+     
